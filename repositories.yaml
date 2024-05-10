@@ -56,7 +56,7 @@ stringData:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: argo
+  name: argo-manual
   namespace: argocd
   labels:
     argocd.argoproj.io/secret-type: repository
