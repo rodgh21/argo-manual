@@ -16,6 +16,7 @@ spec:
   - https://github.com/rodgh21/AzureTest_JAVA.git
   - https://github.com/rodgh21/argo-deploy.git
   - https://github.com/rodgh21/argo-manual.git
+  - https://github.com/rodgh21/traefik.git
   # Only permit applications to deploy to the guestbook namespace in the same cluster
   # Destination clusters can be identified by 'server', 'name', or both.
   destinations:
