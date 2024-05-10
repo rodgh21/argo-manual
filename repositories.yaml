@@ -64,6 +64,17 @@ stringData:
   url: https://github.com/rodgh21/argo-manual.git
   project: shr
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: traefik
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/rodgh21/traefik.git
+  project: shr
+---
 
 #   azure:
 #     url: https://github.com/rodgh21/AzureTest_JAVA.git
