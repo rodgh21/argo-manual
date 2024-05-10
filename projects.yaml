@@ -1,0 +1,49 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  # Project Name
+  name: shr
+  namespace: argocd
+spec:
+  # Project description
+  description: Shr Project
+  # Allow manifests to deploy from any Git repos
+  sourceRepos:
+  # - '*'
+  - https://github.com/rodgh21/applicationset.git
+  - https://github.com/rodgh21/argo.git
+  - https://github.com/rodgh21/argorollout.git
+  - https://github.com/rodgh21/AzureTest_JAVA.git
+  - https://github.com/rodgh21/argo-deploy.git
+  # Only permit applications to deploy to the guestbook namespace in the same cluster
+  # Destination clusters can be identified by 'server', 'name', or both.
+  destinations:
+  - namespace: '*'
+    server: https://kubernetes.default.svc
+    name: '*'
+  # Deny all cluster-scoped resources from being created, except for Namespace
+  clusterResourceWhitelist:
+  - group: ''
+    kind: Namespace
+
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+  - group: '*'
+    kind: '*'
+  # - group: ''
+  #   kind: LimitRange
+  # - group: ''
+  #   kind: NetworkPolicy
+
+  # Deny all namespaced-scoped resources from being created, except for Deployment and StatefulSet
+  namespaceResourceWhitelist:
+  - group: ''
+    kind: ''
+  # - group: 'apps'
+  #   kind: Deployment
+  # - group: 'apps'
+  #   kind: StatefulSet
+
+  # Enables namespace orphaned resource monitoring.
+  orphanedResources:
+    warn: false
