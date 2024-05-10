@@ -53,6 +53,17 @@ stringData:
   url: https://github.com/rodgh21/argorollout.git
   project: shr
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: argo
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/rodgh21/argo-manual.git
+  project: shr
+---
 
 #   azure:
 #     url: https://github.com/rodgh21/AzureTest_JAVA.git
