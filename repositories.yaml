@@ -75,6 +75,17 @@ stringData:
   url: https://github.com/rodgh21/traefik.git
   project: shr
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: jenkins-helm
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/rodgh21/jenkins-helm.git
+  project: shr
+---
 
 #   azure:
 #     url: https://github.com/rodgh21/AzureTest_JAVA.git
