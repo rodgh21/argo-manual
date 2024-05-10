@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: argo
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/rodgh21/argo.git
+  project: shr
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: appset
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/rodgh21/applicationset.git
+  project: shr
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: deploy
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/rodgh21/argo-deploy.git
+  project: shr
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: azure
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/rodgh21/AzureTest_JAVA.git
+  project: shr
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: argorollout
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/rodgh21/argorollout.git
+  project: shr
+---
+
+#   azure:
+#     url: https://github.com/rodgh21/AzureTest_JAVA.git
+#     project: shr
+#   deploy:
+#     url: https://github.com/rodgh21/argo-deploy.git
+#     project: shr
+#   argo:
+#     url: https://github.com/rodgh21/argo.git
+#     project: shr
+#   appset:
+#     url: https://github.com/rodgh21/applicationset.git
+#     project: shr
+#   argorollout:
+#     url: https://github.com/rodgh21/argorollout.git
+#     project: shr
